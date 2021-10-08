@@ -8,6 +8,7 @@
 - Servers communicate with each other
 - Users, PCs and Groups
     - A group can contain PCs and/or Users
+    - Security Groups, Distribution Groups (email)
 
 ### How it works
 
@@ -26,8 +27,8 @@
 - domain name consists of at least 2 domain components (DC)
     - e.g. htl-wien5.schule, 4ehif.local
 - Organizational Units (OU)
-    - Groups or PCs can be part of an OU
-- Group Policy Objects (GPO) can be assigned to OUs
+    - Groups or PCs can be part of an OUw
+- Group Policy Objects (GPO) can be assigned to OUs, locally, sites or on the whole domain
     - e.g. Exam Labs: certain functionality can be en/disabled (internet access)
 
 #### Example structure of a domain 
@@ -37,4 +38,3 @@
         - schueler (OU)
             - HIF (OU)
         - lehrer (OU)
-
