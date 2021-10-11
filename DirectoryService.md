@@ -46,9 +46,17 @@ spengergasse.at = domain name
 
 DNS Resource Records
    - A = IPv4 (32 bit)
+         Syntax example:  www.spengergasse.at A 172.18.9.16
    - AAAA = IPv6 (128 bit)
+         Syntax example:  www.spengergasse.at A 2001:db8:ac78:000A::16
    - PTR = reverse DNS (IP address returns a domain)
+         Syntax example:  172.18.9.16 PTR www.spengergasse.at
    - CNAME = alias (points to other hosts)
+         Syntax example:  spengergasse.at CNAME www.spengergasse.at
+   - MX(Mail eXchange): tells a domain name to receive mails from a dedicated mail server
+         Syntax example:  spengergasse.at MX mail.spengergasse.at
+   - SRV(Service): Dynamic Record for locating Domain Controllers within a specified protocoll
+         Syntax: https://de.wikipedia.org/wiki/SRV_Resource_Record#Aufbau (recht kompliziert)
    
 #### vhost
 inspects the HTTP header to determine, which starting page is needed
