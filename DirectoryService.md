@@ -38,3 +38,22 @@
         - schueler (OU)
             - HIF (OU)
         - lehrer (OU)
+    
+#### DNS
+www.spengergasse.at = fully qualified domain name
+www = host
+spengergasse.at = domain name
+
+DNS Resource Records
+   - A = IPv4 (32 bit)
+   - AAAA = IPv6 (128 bit)
+   - PTR = reverse DNS (IP address returns a domain)
+   - CNAME = alias (points to other hosts)
+   
+#### vhost
+inspects the HTTP header to determine, which starting page is needed
+   - all requests are received on port 80/443 (HTTP GET)
+   - two domain names: gaming.at , spengergasse.at
+   - vhost inspects the given domain name (gaming.at / spengergasse.at)
+   - returns the correct starting page over port 80
+   - > makes port dependency redundant
