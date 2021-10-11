@@ -38,3 +38,12 @@
         - schueler (OU)
             - HIF (OU)
         - lehrer (OU)
+
+
+#### DNS Resource Records (bitte an Pauls Abschnitt anhängen @chri)
+
+- MX(Mail eXchange): tells a domain name to receive mails from a dedicated mail server
+         Syntax example:  gmail.com MX mail1.gmail.com
+
+- SRV(Service): Dynamic Record for locating Domain Controllers within a specified protocoll
+         Syntax: https://de.wikipedia.org/wiki/SRV_Resource_Record#Aufbau (recht kompliziert)
