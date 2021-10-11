@@ -38,12 +38,30 @@
         - schueler (OU)
             - HIF (OU)
         - lehrer (OU)
+    
+#### DNS
+www.spengergasse.at = fully qualified domain name
+www = host
+spengergasse.at = domain name
 
-
-#### DNS Resource Records (bitte an Pauls Abschnitt anhängen @chri)
-
-- MX(Mail eXchange): tells a domain name to receive mails from a dedicated mail server
-         Syntax example:  gmail.com MX mail1.gmail.com
-
-- SRV(Service): Dynamic Record for locating Domain Controllers within a specified protocoll
+DNS Resource Records
+   - A = IPv4 (32 bit)
+         Syntax example:  www.spengergasse.at A 172.18.9.16
+   - AAAA = IPv6 (128 bit)
+         Syntax example:  www.spengergasse.at A 2001:db8:ac78:000A::16
+   - PTR = reverse DNS (IP address returns a domain)
+         Syntax example:  172.18.9.16 PTR www.spengergasse.at
+   - CNAME = alias (points to other hosts)
+         Syntax example:  spengergasse.at CNAME www.spengergasse.at
+   - MX(Mail eXchange): tells a domain name to receive mails from a dedicated mail server
+         Syntax example:  spengergasse.at MX mail.spengergasse.at
+   - SRV(Service): Dynamic Record for locating Domain Controllers within a specified protocoll
          Syntax: https://de.wikipedia.org/wiki/SRV_Resource_Record#Aufbau (recht kompliziert)
+   
+#### vhost
+inspects the HTTP header to determine, which starting page is needed
+   - all requests are received on port 80/443 (HTTP GET)
+   - two domain names: gaming.at , spengergasse.at
+   - vhost inspects the given domain name (gaming.at / spengergasse.at)
+   - returns the correct starting page over port 80
+   - > makes port dependency redundant
