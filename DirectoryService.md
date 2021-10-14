@@ -97,7 +97,7 @@ DNS Resource Records
         - LINK: https://de.wikipedia.org/wiki/SRV_Resource_Record#Aufbau (recht kompliziert)
         - Basic Syntax for understanding:
             - LDAP SRV DC1
-            - <AD service> SRV <Domain Controller zuständig dafür (meistens der erste DC)>
+            - `<AD service> SRV <Domain Controller zuständig dafür (meistens der erste DC)>`
                
    
 #### vhost
