@@ -42,7 +42,7 @@ Windows server with Active Directory
         - htl-wien5 the second level domain
             - both are domain components
 - Organizational Units (OU)
-    - Group Policies can be applied to OUs
+    - Group Policies can be applied to OUs, single hosts, domains and sites
         - Group Policies exist of many Group Policy Objects (basically the rules)
     - Devices, Users or Groups can be OUs
     - But OUs can also represent locations (sites) or rooms
@@ -68,35 +68,35 @@ www = host
 
 spengergasse.at = domain name
 
-DNS Resource Records
+#### DNS Resource Records
    - A = IPv4 (32 bit)
-        - Syntax example:  www.spengergasse.at A 172.18.9.16
+        - Syntax example:  `www.spengergasse.at A 172.18.9.16`
    - AAAA = IPv6 (128 bit)
-        - Syntax example:  www.spengergasse.at A 2001:db8:ac78:000A::16
+        - Syntax example:  `www.spengergasse.at AAAA 2001:db8:ac78:000A::16`
    - PTR = reverse DNS lookup (IP address returns a domain)
         - used for security reasons (to check if the ip really belongs to the domain)
-        - Syntax example:  172.18.9.16 PTR www.spengergasse.at
+        - Syntax example:  `172.18.9.16 PTR www.spengergasse.at`
    - CNAME = alias (points to other hosts)
         - used to link:
         - Syntax example:
-            - spengergasse.at A IPv4 address
-            - www.spengergasse.at CNAME spengergasse.at
-            - cloud.spengergass.at CNAME spengergasse.at
+            - `spengergasse.at A IPv4 address`
+            - `www.spengergasse.at CNAME spengergasse.at`
+            - `cloud.spengergass.at CNAME spengergasse.at`
         - if you change the ip of spengergasse.at the ip will be changed for every CNAME too
         - Same as:
-            - spengergasse.at A IPv4 address
-            - www.spengergasse.at A same IPv4 address
-            - cloud.spengergass.at A same IPv4 address
+            - `spengergasse.at A IPv4 address`
+            - `www.spengergasse.at A same IPv4 address`
+            - `cloud.spengergass.at A same IPv4 address`
    - MX(Mail eXchange): 
         - tells a domain name to receive mails from a dedicated mail server
         - links the @xxx part to the mail server
         - the number is the priority (1-10) 1 being high and 10 being low
-        - Syntax example:  spengergasse.at MX 5 mail.spengergasse.at
+        - Syntax example:  `spengergasse.at MX 5 mail.spengergasse.at`
    - SRV(Service Record): 
         - Dynamic Record for locating Domain Controllers within a specified protocoll
         - LINK: https://de.wikipedia.org/wiki/SRV_Resource_Record#Aufbau (recht kompliziert)
         - Basic Syntax for understanding:
-            - LDAP SRV DC1
+            - `LDAP SRV DC1`
             - `<AD service> SRV <Domain Controller zuständig dafür (meistens der erste DC)>`
                
    
@@ -107,4 +107,4 @@ inspects the HTTP header to determine, which starting page is needed
    - vhost inspects the given domain name (gaming.at / spengergasse.at)
         - gets the information from the HTTP GET request (HTTP header displays domain)
    - returns the correct starting page over port 80
-   - > makes port dependency redundant
+   - makes port dependency redundant
