@@ -13,6 +13,7 @@ To contribute:
 Contributing is highly appreciated! :D
 
 ## Documentation provided
-- [Directory Service](https://github.com/ckainz11/4EHIF-NVS-doc/blob/master/DirectoryService.md) | September - current
+- [Directory Service](https://github.com/ckainz11/4EHIF-NVS-doc/blob/master/4xHIF/DirectoryService.md)
+- [3xHIF Doc](https://github.com/ckainz11/4EHIF-NVS-doc/tree/master/3xHIF) | by [Luktronic](https://github.com/Luktronic)
 
 *No guarantee of completeness*
